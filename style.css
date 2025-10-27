@@ -1,0 +1,865 @@
+*{
+  margin: 0;
+  padding: 0;
+  /*--font-family: 'Lora', serif;*/
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background: #F4F1DE;
+}
+
+
+
+.container-box {
+  position: relative; /* enable absolute children positioning */
+  background-color: #005F73;
+  width: 93%;
+  max-width: 2000px;
+  margin: 50px auto; /* center horizontally */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  min-height: 450px;
+  max-height: 450px;
+  overflow: visible;
+  color: white;
+  display: flex;
+  justify-content: center; /* center content horizontally */
+  align-items: center;
+}
+
+.header-text {
+  text-align: center; /* centers all text inside */
+  margin: 0 auto;
+  max-width: fit-content; /* optional, shrink-wrap the text */
+  margin-bottom: 60px;
+}
+
+.header-text p {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: white;
+  font-family: "Playfair Display", serif;
+  z-index: 3;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0;
+}
+
+.header-text p span{
+  font-size: 110px;
+  font-family: "Reenie Beanie", cursive;
+  color: white;
+}
+
+.header-text h1 {
+  position: absolute;
+  top: 30px;  /* near top */
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Playfair Display", serif;
+  font-size: 5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.15); /* subtle, behind effect */
+  color: white;
+  white-space: nowrap;
+  z-index: 1;
+  pointer-events: none; /* so it doesn't interfere */
+}
+
+.header-text h1 span{
+  font-family: "Playfair Display", serif;
+  color: white;
+}
+
+.header-text p, .header-text h1{
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+.header-image {
+  position: absolute; /* Position inside container */
+  bottom: 0; /* Sit at the bottom edge */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Perfect horizontal center */
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align bottom */
+  max-width: 100%; /* Keep it inside */
+  height: auto;
+}
+
+.header-image img {
+  max-width: 100%;
+  height: 650px;
+  object-fit: contain;
+  border-radius: 10px;
+  display: block;
+}
+
+
+/*-------------------------------about-------------------------------------------------------------------*/
+
+
+#about{
+  padding: 4rem 2rem;
+  background: #F4F1DE; /* cream */
+  color: #333;
+} 
+
+.container{
+  padding: 10px 10%;
+}
+
+.about-row {
+  display: flex;
+  gap: 70px; /* spacing between left and right columns */
+  align-items: flex-start; /* align columns at top */
+}
+
+.image-grid {
+  display: flex;
+  position: relative;
+  z-index: 10;  
+  gap: 20px; /* horizontal space between the 3 image columns */
+  flex: 40;   /* give this section more space compared to the text side */
+}
+
+.image-grid img{
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.about-col-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* vertical space between images */
+  flex: 1;   /* equally share available width among the 3 columns */
+}
+
+.about-col-2{
+  flex: 1;
+  flex-basis: 60%;
+  margin-left: 5%;
+  text-align: left;
+}
+
+.about-sub-title{
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: #005F73;
+  display: inline-block;
+  border-bottom: 2px solid #D4A373;
+}
+
+.about-col-2 p{
+  font-family: "Quicksand", sans-serif;
+  padding-top: 15px;
+  font-size: 18px;
+}
+
+
+/*-----------------------experience---------------------------------------------------------------------------*/
+
+
+.skills-experience {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 8rem;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.skills-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  font-family: "Quicksand", sans-serif;
+  background: #F4F1DE; /* Cream */
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #005F73; /* Teal */
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  border-bottom: 2px solid #D4A373; /* Gold underline */
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.skill-card {
+  min-height: 220px; /* Makes skills stand out more */
+}
+
+.skill-list li {
+  background: #D4A373; /* Gold pill */
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 4px 6px 0 0;
+  font-size: 1rem;
+}
+
+.education-card {
+  grid-column: span 2;
+}
+
+.job, .edu {
+  margin-bottom: 1.5rem;
+}
+
+.job h4, .edu h4 {
+  margin-bottom: 0.2rem;
+  font-weight: 600;
+  color: #2F3E46; /* Charcoal */
+}
+
+.date {
+  display: block;
+  font-size: 0.85rem;
+  color: #D4A373; /* Gold */
+  margin-bottom: 0.4rem;
+}
+
+p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #2F3E46; /* Charcoal */
+}
+
+ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+ul li {
+  margin-bottom: 0.4rem;
+  color: #2F3E46;
+}
+
+
+/*----------------------portfolio-----------------------------------------------------------------------------*/
+
+#portfolio {
+  padding: 70px 0;
+  background-color: #F4F1DE;
+}
+
+.container.portfolio-grid {
+  display: flex;
+  gap: 40px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.left-column {
+  flex: 4; /* bigger left column */
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.project {
+  display: flex;
+  gap: 15px;
+  background-color: white;
+  padding: 15px;
+  border-radius: 15px;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.project img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.description {
+  flex: 1;
+  position: relative;
+  padding-right: 50px;
+}
+
+.description h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  color: #005F73;
+  margin-bottom: 15px;
+}
+
+.description p {
+  font-size: 18px;
+  color: #2F3E46;
+  line-height: 1.5;
+  font-family: "Quicksand", sans-serif;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 40px;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project:hover .arrow {
+  color: #d4a373;
+}
+
+.right-column {
+  flex: 1; /* narrower right column */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin-left: auto;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.sub-title {
+  font-family: "Playfair Display", serif;
+  font-size: 50px;
+  color: #005F73;
+  margin: 0;
+  line-height: 1.1;
+  /* make the container narrow so text breaks into many lines */
+  text-align: center;
+  width: 100%;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+}
+
+.btn {
+  padding: 14px 30px;
+  border: 1px solid #2F3E46;
+  border-radius: 6px;
+  color: #2F3E46;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  width: 100%;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+}
+
+.btn:hover {
+  background: #005F73;
+  color: white;
+}
+
+/*-------------------instagram-------------------------------------------------------------------------------*/
+
+#instagram-promo {
+  background: #F4F1DE;
+  padding: 60px 20px;
+  color: #2f3e46;
+  text-align: center;
+  user-select: none;
+  overflow: hidden;
+  position: relative;
+}
+
+.insta-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.main-text {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  font-family: "Quicksand", sans-serifs;
+}
+
+.main-text .screens{
+  font-family: "Reenie Beanie", cursive;
+  font-size: 80px;
+}
+
+.design-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.left-text{
+  margin-right: 40px;
+}
+
+.phone-image img {
+  width: 350px;
+  height: auto;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px #D4A373;
+  transform: rotate(-3deg);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.phone-image img:hover {
+  transform: rotate(0deg) scale(1.05);
+  box-shadow: 0 25px 60px #D4A373;
+}
+
+.right-text{
+  margin-left: 40px;
+}
+
+.right-text span{
+  font-family: "Reenie Beanie", cursive;
+  font-size: 80px;
+  margin-left: 0.3em; /* adds breathing room */
+  letter-spacing: normal;
+}
+
+.left-text, .right-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  max-width: 150px;
+  line-height: 1.2;
+  user-select: text;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+  position: relative;
+  top: -100px; 
+}
+
+/*----------------------- Connect Section ---------------------------------------------------------------- */
+
+.connect-section {
+  padding: 100px 20px;
+  text-align: center;
+  background: #F4F1DE; /* light neutral tone to match aesthetic */
+}
+
+.connect-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #005F73;
+  display: inline-block;
+  border-bottom: 3px solid #FFB703; /* your accent color */
+  font-family: "Playfair Display", serif;
+  padding-bottom: 5px;
+}
+
+.connect-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.connect-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.connect-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
+}
+
+.connect-card i {
+  font-size: 2rem;
+  color: #FFB703; /* your accent color */
+  margin-bottom: 10px;
+}
+
+.connect-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+  color: #222;
+  font-family: "Quicksand", sans-serif;
+}
+
+.connect-card a {
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.connect-card a:hover {
+  color: #FFB703;
+}
+
+/*-------------------------copyright---------------------------------------------------------------------*/
+
+.copyright{
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  background: #F4F1DE;
+  color: #2F3E46;
+  font-weight: 300;
+  margin-top: 0px;
+  font-family: "Quicksand", sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------css for small screen-------------------------------------------------------------------*/
+
+@media only screen and (max-width:900px){
+
+  .container-box {
+    flex-direction: column;
+    min-height: auto;
+    max-height: none;
+    padding: 20px 10px;
+    margin: 30px auto;
+    width: 95%;
+  }
+
+  .header-text {
+    position: relative; /* undo absolute children */
+    text-align: center;
+    margin: 0 auto 20px auto;
+    width: 100%;
+  }
+
+  .header-text p {
+    position: static;
+    transform: none;
+    font-size: 1.2rem;
+    white-space: normal;
+    margin-left: 0;
+  }
+
+  .header-text p span {
+    font-size: 50px;
+  }
+
+  .header-text h1 {
+    position: static;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.15);
+    white-space: normal;
+    margin-left: 215px;
+    pointer-events: none;
+    text-align: center; /* Center the text */
+    width: 100%;        /* Make sure it fills the container */
+  }
+
+  .header-text h1 span {
+    color: white;
+  }
+
+  .typing {
+    display: inline-block;
+    max-width: 150px; /* adjust to widest expected text */
+    text-align: center;
+    margin-right: 25px;
+  }
+
+  .header-image {
+    position: relative; /* reset absolute */
+    width: 100%;
+    height: auto;
+    transform: none;
+    bottom: auto;
+    left: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .header-image img {
+    height: auto;
+    max-width: 90vw; /* responsive width */
+    border-radius: 10px;
+  }
+
+  /*---------------------about---------------------------------------------------------------------------*/
+
+  .about-sub-title{
+    font-size: 40px;
+  }
+
+  .about-col-1, .about-col-2{
+    flex-basis: 100%;
+  }
+
+  .about-col-1{
+    margin-bottom: 30px;
+  }
+
+  .about-row {
+    flex-direction: column; /* stack images and text */
+    gap: 40px; /* reduce spacing between sections */
+    align-items: center; /* center everything */
+  }
+
+  .image-grid {
+    display: none;
+  }
+
+  .about-col-2 {
+    margin-left: 0;
+    text-align: center; /* center the text for mobile */
+    flex-basis: auto;
+    font-size: 14px;
+  }
+
+  .about-sub-title {
+    font-size: 36px; /* smaller heading for mobile */
+  }
+
+  .about-col-2 p {
+    font-size: 16px;
+    padding-top: 10px;
+  }
+
+/*---------------------experience-----------------------------------------------------------------------*/
+
+  .skills-experience {
+    grid-template-columns: 1fr; /* Stack columns */
+    padding: 2rem; /* Reduce padding */
+    gap: 1.5rem;
+  }
+
+  .education-card {
+    grid-column: span 1; /* No need to span across now */
+  }
+
+  .card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .skill-card {
+    min-height: auto; /* Let height adjust naturally */
+  }
+
+  .skill-list li {
+    font-size: 0.85rem;
+    padding: 3px 8px;
+    margin: 3px 5px 0 0;
+  }
+
+  .job h4, .edu h4 {
+    font-size: 1rem;
+  }
+
+  p, ul li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  /*-------------------------portfolio------------------------------------------------------------------------*/
+
+  .container.portfolio-grid {
+    flex-direction: column;
+    padding: 0 5%;
+    gap: 30px;
+  }
+
+  .left-column {
+    flex: 1;
+    gap: 40px;
+  }
+
+  .project {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+  }
+
+  .description {
+    padding-right: 0;
+  }
+
+  .arrow {
+    position: static;
+    transform: none;
+    font-size: 30px;
+    margin-top: 10px;
+  }
+
+  .right-column {
+    align-items: center;
+    margin-left: 0;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .sub-title {
+    font-size: 40px;
+  }
+
+  .btn {
+    width: auto;
+  }
+
+  /*-------------------instgarm---------------------------------------------------------------------------------*/
+
+  .design-row {
+    flex-direction: column;
+    gap: 30px; /* smaller gap between items */
+  }
+
+  .left-text,
+  .right-text {
+    margin: 0;
+    top: 0;
+    max-width: 100%;
+    font-size: 1.8rem; /* smaller text */
+    text-align: center;
+  }
+
+  .left-text span,
+  .right-text span {
+    font-size: 60px; /* shrink handwritten text */
+  }
+
+  .phone-image img {
+    width: 250px; /* smaller image for mobile */
+    transform: none; /* no rotation on mobile for a clean look */
+  }
+
+  .main-text {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .main-text .screens {
+    font-size: 60px; /* smaller handwritten "screens" text */
+  }
+}
+
+@media (max-width: 480px) {
+
+
+  /*------------------about---------------------------------------------------------------------------*/
+
+  .about-sub-title {
+    font-size: 28px;
+  }
+
+  .about-col-2 p {
+    font-size: 14px;
+  }
+
+  /*-------------------exoerience-------------------------------------------------------------------------*/
+
+  .skills-experience {
+    padding: 1.5rem 1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .skill-list li {
+    font-size: 0.8rem;
+  }
+
+  .job h4, .edu h4 {
+    font-size: 0.95rem;
+  }
+
+  /*---------------------instagram-------------------------------------------------------------------------------------*/
+  .main-text {
+    font-size: 1.6rem;
+  }
+
+  .main-text .screens {
+    font-size: 45px;
+  }
+
+  .phone-image img {
+    width: 200px;
+  }
+
+  .left-text,
+  .right-text {
+    font-size: 1.5rem;
+  }
+
+  .left-text span,
+  .right-text span {
+    font-size: 50px;
+  }
+
+}
