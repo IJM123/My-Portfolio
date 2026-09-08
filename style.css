@@ -24,39 +24,38 @@ body{
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
-  height: 450px;
+  height: clamp(300px, 35vw, 450vw);
   overflow: visible;
   color: white;
   display: flex;
   justify-content: center; /* center content horizontally */
-  align-items: flex-end;
+  align-items: center;
 }
 
 .header-text {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  text-align: center;
+  margin: 0 auto;
+  max-width: fit-content;
+  margin-bottom: 60px;
 }
 
 .header-text p {
   position: absolute;
-  bottom: 8%;
+  bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-size: clamp(1.5rem, 3.5vw, 3.125rem);
   color: white;
   font-family: "Playfair Display", serif;
   z-index: 3;
   white-space: nowrap;
   margin: 0;
   padding: 0;
+  line-height: 1.2;
 }
 
 .header-text p span{
-  font-size: clamp(3.5rem, 7vw, 6.875rem);
+  font-size: clamp(3rem, 7.5vw, 6.875rem);
   font-family: "Reenie Beanie", cursive;
   color: white;
 }
@@ -67,13 +66,15 @@ body{
   left: 50%;
   transform: translateX(-50%);
   font-family: "Playfair Display", serif;
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2rem, 5.5vw, 5rem);
   font-weight: 700;
   color: rgba(255, 255, 255, 0.15); /* subtle, behind effect */
   white-space: nowrap;
   z-index: 1;
+  pointer-events: none;
   margin: 0;
   padding: 0;
+  line-height: 1.2;
 }
 
 .header-text h1 span{
@@ -88,19 +89,24 @@ body{
 }
 
 .header-image {
-  position: relative; /* Position inside container */
+  position: absolute; /* Position inside container */
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: flex-end; /* Align bottom */
+  max-width: 100%;
   height: 100%; /* Keep it inside */
   pointer-events: none;
 }
 
 .header-image img {
-  max-width: none;
-  height: 650px;
+  max-width: 100%;
+  height: clamp(380px, 45vw, 650px);
   object-fit: contain;
+  border-radius: 10px;
   display: block;
 }
 
