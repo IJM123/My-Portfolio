@@ -24,7 +24,7 @@ body{
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
-  height: clamp(300px, 40vh, 450px);
+  height: clamp(220px, 50vh, 550px);
   overflow: visible;
   color: white;
   display: flex;
@@ -578,7 +578,7 @@ ul li {
 @media only screen and (max-width:900px){
 
   .container-box {
-    height: clamp(260px, 30vh, 320px);
+    height: clamp(260px, 40vh, 420px);
     margin: 25px auto;
   }
 
@@ -599,7 +599,7 @@ ul li {
 
 
   .header-image img {
-    height: 135%;
+    height: 150%;
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
