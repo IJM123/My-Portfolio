@@ -24,12 +24,12 @@ body{
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
-  height: clamp(300px, 35vw, 450vw);
+  height: clamp(220px, 40vh, 450px);
   overflow: visible;
   color: white;
   display: flex;
   justify-content: center; /* center content horizontally */
-  align-items: center;
+  align-items: flex-end;
 }
 
 .header-text {
@@ -74,7 +74,7 @@ body{
   pointer-events: none;
   margin: 0;
   padding: 0;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .header-text h1 span{
@@ -103,8 +103,8 @@ body{
 }
 
 .header-image img {
-  max-width: 100%;
-  height: clamp(380px, 45vw, 650px);
+  max-width: none;
+  height: 135%;
   object-fit: contain;
   border-radius: 10px;
   display: block;
@@ -578,8 +578,8 @@ ul li {
 @media only screen and (max-width:900px){
 
   .container-box {
-    height: clamp(260px, 45vw, 400px);
-    margin: 20px auto;
+    height: clamp(260px, 30vh, 320px);
+    margin: 25px auto;
   }
 
 
@@ -599,7 +599,7 @@ ul li {
 
 
   .header-image img {
-    height: clamp(300px, 60vw, 550px);
+    height: 130%;
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
