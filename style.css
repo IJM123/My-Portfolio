@@ -24,7 +24,7 @@ body{
   border-radius: 10px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.2);
   box-sizing: border-box;
-  height: clamp(220px, 40vh, 450px);
+  height: clamp(300px, 40vh, 450px);
   overflow: visible;
   color: white;
   display: flex;
@@ -104,7 +104,7 @@ body{
 
 .header-image img {
   max-width: none;
-  height: 200%;
+  height: 150%;
   object-fit: contain;
   border-radius: 10px;
   display: block;
@@ -599,7 +599,7 @@ ul li {
 
 
   .header-image img {
-    height: 200%;
+    height: 135%;
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
