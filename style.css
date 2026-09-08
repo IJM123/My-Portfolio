@@ -104,7 +104,7 @@ body{
 
 .header-image img {
   max-width: none;
-  height: 135%;
+  height: 200%;
   object-fit: contain;
   border-radius: 10px;
   display: block;
@@ -599,7 +599,7 @@ ul li {
 
 
   .header-image img {
-    height: 130%;
+    height: 200%;
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
