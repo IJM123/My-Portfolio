@@ -578,72 +578,28 @@ ul li {
 @media only screen and (max-width:900px){
 
   .container-box {
-    flex-direction: column;
-    min-height: auto;
-    max-height: none;
-    padding: 20px 10px;
-    margin: 30px auto;
-    width: 95%;
+    height: clamp(260px, 45vw, 400px);
+    margin: 20px auto;
   }
 
-  .header-text {
-    position: relative; /* undo absolute children */
-    text-align: center;
-    margin: 0 auto 20px auto;
-    width: 100%;
-  }
 
   .header-text p {
-    position: static;
-    transform: none;
-    font-size: 1.2rem;
-    white-space: normal;
-    margin-left: 0;
+    font-size: clamp(1rem, 3.5vw, 2rem);
+    bottom: 4%;
   }
 
   .header-text p span {
-    font-size: 50px;
+    font-size: clamp(2.2rem, 8vw, 4.5rem);
   }
 
   .header-text h1 {
-    position: static;
-    font-size: 2.5rem;
-    color: rgba(255, 255, 255, 0.15);
-    white-space: normal;
-    margin-left: 215px;
-    pointer-events: none;
-    text-align: center; /* Center the text */
-    width: 100%;        /* Make sure it fills the container */
+    font-size: clamp(1.5rem, 6vw, 3.5rem);
+    top: 5%;
   }
 
-  .header-text h1 span {
-    color: white;
-  }
-
-  .typing {
-    display: inline-block;
-    max-width: 150px; /* adjust to widest expected text */
-    text-align: center;
-    margin-right: 25px;
-  }
-
-  .header-image {
-    position: relative; /* reset absolute */
-    width: 100%;
-    height: auto;
-    transform: none;
-    bottom: auto;
-    left: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-  }
 
   .header-image img {
-    height: auto;
-    max-width: 90vw; /* responsive width */
-    border-radius: 10px;
+    height: clamp(300px, 60vw, 550px);
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
