@@ -44,7 +44,7 @@ body{
   bottom: 5%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(1.5rem, 3.5vw, 3.125rem);
+  font-size: clamp(1.1rem, 3.2vw, 3.125rem);
   color: white;
   font-family: "Playfair Display", serif;
   z-index: 3;
@@ -55,7 +55,7 @@ body{
 }
 
 .header-text p span{
-  font-size: clamp(3rem, 7.5vw, 6.875rem);
+  font-size: clamp(2.2rem, 6.5vw, 6.875rem);
   font-family: "Reenie Beanie", cursive;
   color: white;
 }
@@ -584,12 +584,12 @@ ul li {
 
 
   .header-text p {
-    font-size: clamp(1rem, 3.5vw, 2rem);
+    font-size: clamp(0.9rem, 3vw, 1.8rem);
     bottom: 4%;
   }
 
   .header-text p span {
-    font-size: clamp(2.2rem, 8vw, 4.5rem);
+    font-size: clamp(1.8rem, 6vw, 3.8rem);
   }
 
   .header-text h1 {
