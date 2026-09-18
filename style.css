@@ -26,13 +26,12 @@ body{
   box-sizing: border-box;
   height: clamp(220px, 50vh, 550px);
   overflow: visible;
-  color: white;
   display: flex;
   justify-content: center; /* center content horizontally */
   align-items: flex-end;
 }
 
-.header-text {
+/*.header-text {
   text-align: center;
   margin: 0 auto;
   max-width: fit-content;
@@ -41,34 +40,36 @@ body{
 
 .header-text p {
   position: absolute;
-  bottom: 5%;
+  bottom: 1%;
   left: 50%;
   transform: translateX(-50%);
-  font-size: clamp(1.1rem, 3.2vw, 3.125rem);
+  font-size: clamp(1.1rem, 2.2vw, 2.125rem);
   color: white;
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Quicksand", sans-serif;
   z-index: 3;
   white-space: nowrap;
   margin: 0;
   padding: 0;
   line-height: 1.2;
+  align-items: baseline;
 }
 
 .header-text p span{
-  font-size: clamp(2.2rem, 6.5vw, 6.875rem);
-  font-family: "Reenie Beanie", cursive;
+  font-size: clamp(2.2rem, 4.5vw, 6.875rem);
+  font-family: "Gochi Hand", cursive;
+  font-weight: 300;
   color: white;
-}
+}*/
 
 .header-text h1 {
   position: absolute;
   top: 5%;  /* near top */
   left: 50%;
   transform: translateX(-50%);
-  font-family: "Playfair Display", serif;
+  font-family: "Quicksand";
   font-size: clamp(2rem, 5.5vw, 5rem);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.15); /* subtle, behind effect */
+  color: rgba(255, 255, 255, .50); /* subtle, behind effect */
   white-space: nowrap;
   z-index: 1;
   pointer-events: none;
@@ -77,10 +78,6 @@ body{
   line-height: 1;
 }
 
-.header-text h1 span{
-  font-family: "Playfair Display", serif;
-  color: white;
-}
 
 .header-text p, .header-text h1{
   margin: 0;
@@ -104,7 +101,7 @@ body{
 
 .header-image img {
   max-width: none;
-  height: 150%;
+  height: 85%;
   object-fit: contain;
   border-radius: 10px;
   display: block;
@@ -135,8 +132,8 @@ body{
   position: relative;
   z-index: 10;  
   gap: 20px; /* horizontal space between the 3 image columns */
-  flex: 40;   /* give this section more space compared to the text side */
-}
+  flex: 1 1 40%; /* give this section more space compared to the text side */
+} 
 
 .image-grid img{
   width: 150px;
@@ -144,20 +141,21 @@ body{
   object-fit: cover;
   border-radius: 10px;
   display: block;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .about-col-1 {
   display: flex;
   flex-direction: column;
   gap: 20px; /* vertical space between images */
-  flex: 1;   /* equally share available width among the 3 columns */
-}
+  flex: 1;   /* equally share available width among the 3 columns */ 
+} 
 
 .about-col-2{
   flex: 1;
   flex-basis: 60%;
   margin-left: 5%;
-  text-align: left;
+  text-align: center;
 }
 
 .about-sub-title{
@@ -181,7 +179,7 @@ body{
 
 .skills-experience {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 8rem;
   padding-top: 50px;
@@ -228,23 +226,20 @@ body{
   padding: 4px 10px;
   border-radius: 20px;
   display: inline-block;
-  margin: 4px 6px 0 0;
+  margin: 12px 6px 0 0;
   font-size: 1rem;
 }
 
-.education-card {
-  grid-column: span 2;
-}
 
-.job, .edu {
+/*.job, .edu {
   margin-bottom: 1.5rem;
 }
 
 .job h4, .edu h4 {
   margin-bottom: 0.2rem;
   font-weight: 600;
-  color: #2F3E46; /* Charcoal */
-}
+  color: #2F3E46; /* Charcoal 
+} */
 
 .date {
   display: block;
@@ -346,7 +341,7 @@ ul li {
   top: 50%;
   transform: translateY(-50%);
   font-size: 40px;
-  color: white;
+  color: #005F73;
   font-weight: bold;
   transition: color 0.3s ease;
 }
@@ -417,17 +412,25 @@ ul li {
   margin: 0 auto;
 }
 
-.main-text {
-  font-size: 2.8rem;
+.main-text.highlighted-text {
+  font-family: "Quicksand", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Fluid font sizing so it resizes smoothly */
   font-weight: 800;
-  margin-bottom: 50px;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  font-family: "Quicksand", sans-serifs;
+  margin-bottom: 40px;
+  text-shadow: none;
+  line-height: 1.35; /* Extra height to prevent highlight overlap between wrapped lines */
+  padding: 0 10px; /* Cushioning for smaller screens */
 }
 
-.main-text .screens{
-  font-family: "Reenie Beanie", cursive;
-  font-size: 80px;
+.main-text.highlighted-text span {
+  position: relative;
+  z-index: 1;
+  display: inline; /* Inline allows text to wrap naturally across lines */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background-image: linear-gradient(to bottom,transparent 55%, rgba(212, 163, 115, .45)55%);
+  padding: 0 6px; /* Extends highlight slightly beyond text edges */
+  border-radius: 4px;
 }
 
 .design-row {
@@ -438,50 +441,39 @@ ul li {
   flex-wrap: wrap;
 }
 
-.left-text{
-  margin-right: 40px;
-}
-
 .phone-image img {
-  width: 350px;
+  width: 250px;
   height: auto;
   border-radius: 30px;
-  box-shadow: 0 15px 40px #D4A373;
-  transform: rotate(-3deg);
+  box-shadow: 0 5px 40px #D4A373;
+  /*transform: rotate(-3deg);*/
   transition: transform 0.3s ease;
   cursor: pointer;
 }
 
 .phone-image img:hover {
   transform: rotate(0deg) scale(1.05);
-  box-shadow: 0 25px 60px #D4A373;
+  box-shadow: 0 3px 60px #D4A373;
 }
 
-.right-text{
-  margin-left: 40px;
+.curved-text-svg {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto 10px auto;
+  display: block;
+  overflow: visible;
 }
 
-.right-text span{
-  font-family: "Reenie Beanie", cursive;
-  font-size: 80px;
-  margin-left: 0.3em; /* adds breathing room */
-  letter-spacing: normal;
-}
-
-.left-text, .right-text {
-  font-size: 2.5rem;
-  font-weight: 700;
-  max-width: 150px;
-  line-height: 1.2;
-  user-select: text;
-  letter-spacing: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.curved-text-element {
   font-family: "Quicksand", sans-serif;
-  position: relative;
-  top: -100px; 
+  font-size: 2.2rem;
+  font-weight: 800;
+  fill: #2f3e46; /* Text color */
+  letter-spacing: 1px;
 }
+
+
 
 /*----------------------- Connect Section ---------------------------------------------------------------- */
 
@@ -496,7 +488,7 @@ ul li {
   margin-bottom: 30px;
   color: #005F73;
   display: inline-block;
-  border-bottom: 3px solid #FFB703; /* your accent color */
+  border-bottom: 3px solid #D4A373; /* your accent color */
   font-family: "Playfair Display", serif;
   padding-bottom: 5px;
 }
@@ -524,7 +516,7 @@ ul li {
 
 .connect-card i {
   font-size: 2rem;
-  color: #FFB703; /* your accent color */
+  color: #D4A373; /* your accent color */
   margin-bottom: 10px;
 }
 
@@ -539,6 +531,7 @@ ul li {
   color: #555;
   text-decoration: none;
   font-size: 0.95rem;
+  font-family: "Playfair Display", serif;
 }
 
 .connect-card a:hover {
@@ -575,7 +568,7 @@ ul li {
 
 /*--------------------css for small screen-------------------------------------------------------------------*/
 
-@media only screen and (max-width:900px){
+@media only screen and (max-width:1200px){
 
   .container-box {
     height: clamp(260px, 40vh, 420px);
