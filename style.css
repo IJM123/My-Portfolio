@@ -458,9 +458,9 @@ ul li {
 
 .curved-text-svg {
   width: 100%;
-  max-width: 500px;
+  max-width: 750px;
   height: auto;
-  margin: 0 auto 10px auto;
+  margin: 0 auto 5px auto;
   display: block;
   overflow: visible;
 }
@@ -592,7 +592,7 @@ ul li {
 
 
   .header-image img {
-    height: 150%;
+    height: 90%;
   }
 
   /*---------------------about---------------------------------------------------------------------------*/
