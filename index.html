@@ -9,6 +9,10 @@
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Lora&family=sans+serif&family=serif&family=Paytone One&family=Roboto&family=Playfair Display&family=Quicksand&family=Reenie Beanie&family=Shrikhand&family=Kalam&family=Gochi Hand&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <head>
+  <!-- Font Awesome 6 CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
 
 <body>
 
@@ -47,8 +51,8 @@
         </div>
       </div> -->
       <div class="about-col-2">
-        <h1 class="about-sub-title">Full Stack Story</h1>
-        <p>I bring ideas to life by crafting websites that are not only visually engaging but also seamless to use. My passion for design started with DIY crafts and bullet journaling and has since evolved into building bold, user-friendly digital experiences. With an eye for aesthetics, a knack for problem-solving, and being a perfectionist, I focus on every detail to create websites that feel effortless and intuitive. My purpose is to transform your concepts into meaningful digital spaces that inspire connection, spark curiosity, and leave a lasting impression. When I’m not coding or designing, you’ll find me baking, exploring new food spots, reading, or taking long walks with friends.
+        <h1 class="about-sub-title">Byte-Sized Story</h1>
+        <p>My passion for design grew out of small creative outlets—like DIY crafts, junk journaling, and canva moodboards—before evolving into building bold, user-friendly digital experiences. With an eye for aesthetics, a knack for problem-solving, and being a perfectionist, I focus on every detail to create websites that feel effortless and intuitive. My purpose is to transform your concepts into digital spaces that cultivate connection, spark curiosity, and leave a lasting impression. When I’m not coding or designing, you’ll find me baking, exploring new food spots, reading, or taking long walks with friends.
         </p>
       </div>
     </div>
@@ -166,9 +170,7 @@
         <path id="textArc" d="M 40,120 Q 400,20 760,120" fill="transparent" />
       </defs>
       <text class="curved-text-element">
-        <textPath href="#textArc" startOffset="50%" text-anchor="middle">
-          A peek behind the screens...
-        </textPath>
+        <textPath href="#textArc" startOffset="50%" text-anchor="middle">A peek behind the screens</textPath>
       </text>
     </svg>
     <div class="design-row">
@@ -183,25 +185,49 @@
 
 <section id="connect" class="connect-section">
   <h2>Connect with me</h2>
-  <div class="connect-cards">
-    <div class="connect-card">
-      <i class="fas fa-envelope"></i>
-      <h3>Email</h3>
-      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=insiya694@gmail.com">insiya694@gmail.com</a>
+  
+  <div class="connect-container">
+    <!-- Column 1: Contact Form -->
+    <div class="connect-col-form">
+      <form id="contactForm" class="contact-form" onsubmit="submitToSpreadsheet(event)">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="First and Last" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            rows="5" 
+            placeholder="Tell me what's on your mind..." 
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn">
+          <i class="fas fa-paper-plane"></i> Send Message
+        </button>
+
+        <p id="formStatus" style="display:none; margin-top:15px; font-family:'Quicksand', sans-serif; text-align:center;"></p>
+      </form>
     </div>
 
-    <div class="connect-card">
-      <i class="fas fa-phone"></i>
-      <h3>Phone</h3>
-      <a href="tel:+19403910260">+1 (940) 391-0260</a>
+    <!-- Column 2: LinkedIn & Social Connections -->
+    <div class="connect-col-social">
+      <div class="connect-card">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <p>Let's connect professionally or check out my work experience.</p>
+        <a href="https://linkedin.com/in/YOUR_PROFILE" target="_blank" rel="noopener noreferrer" class="social-link">View Profile</a>
+      </div>
     </div>
-
-    <div class="connect-card">
-      <i class="fab fa-linkedin"></i>
-      <h3>LinkedIn</h3>
-      <a href="https://www.linkedin.com/in/insiya-makra-6a4428220" target="_blank">View Profile</a>
-    </div>
-
   </div>
 </section>
 
@@ -221,6 +247,47 @@
   backSpeed:60,
   loop:true
 })
+
+  function submitToSpreadsheet(event) {
+    event.preventDefault();
+
+    const scriptURL = "https://script.google.com/macros/s/AKfycbwhKsDl4XBJn9Oy5x8z3TxaHvlyLah1LyQ9Yt-PF5W8rwZknvAhBuwSYDqxjaWG1GBQ_w/exec"; // Replace with your Google Apps Script Web App URL
+    const btn = document.getElementById("submitBtn");
+    const status = document.getElementById("formStatus");
+
+    const formData = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value
+    };
+
+    btn.disabled = true;
+    btn.innerText = "Sending...";
+
+    fetch(scriptURL, {
+      method: "POST",
+      mode: "no-cors",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(() => {
+      status.style.display = "block";
+      status.style.color = "#005F73";
+      status.innerText = "Thank you! Your message has been recorded.";
+      document.getElementById("contactForm").reset();
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    })
+    .catch(error => {
+      status.style.display = "block";
+      status.style.color = "red";
+      status.innerText = "Something went wrong. Please try again.";
+      btn.disabled = false;
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    });
+  }
 
 </script>
 
